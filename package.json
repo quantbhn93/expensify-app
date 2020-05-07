@@ -50,7 +50,8 @@
   },
   "devDependencies": {
     "babel-jest": "^25.5.1",
-    "babel-polyfill": "^6.26.0"
+    "babel-polyfill": "^6.26.0",
+    "extract-text-webpack-plugin": "^3.0.2"
   },
   "dependenciesComments": {
     "babel-core": "6.25.0",
