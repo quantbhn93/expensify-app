@@ -24,8 +24,18 @@ module.exports = (env) => {
           test: /\.s?css$/,  // load css file and scss file
           use: CSSExtract.extract({
             use: [
-              'css-loader',
-              'sass-loader'
+              {
+                loader: 'css-loader', // https://webpack.js.org/loaders/css-loader/
+                options: {
+                  sourceMap: true
+                }
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: true
+                }
+              }
             ]
           })
           // use: [
@@ -40,7 +50,7 @@ module.exports = (env) => {
       CSSExtract
     ],
     // setup devtool: source map for Javascript
-    devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
+    devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
       historyApiFallback: true
